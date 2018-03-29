@@ -17,6 +17,7 @@ def find_text(array):
     search_for = input('SEARCH: ')
 
     for line in array:
+
         if search_for.lower() in line.lower():
             reduced_array.append(line)
         elif search_for.lower() not in line.lower():
@@ -29,6 +30,8 @@ def find_text(array):
         print(f'FOUND {len(reduced_array)} ELEMENTS')
     else:
         print(f'FOUND {len(reduced_array)} ELEMENT')
+    if len(reduced_array) == 1:
+        return
     find_text(reduced_array)
 
 
