@@ -18,10 +18,13 @@ def find_text(array):
 
     for line in array:
 
-        if search_for.lower() in line.lower():
-            reduced_array.append(line)
-        elif search_for.lower() not in line.lower():
-            continue
+        with open (line) as f:
+            read_line = f.read()
+
+            if search_for.lower() in read_line.lower():
+                reduced_array.append(line)
+            else:
+                continue
 
     for reduced_array_line in reduced_array:
         print(reduced_array_line)
